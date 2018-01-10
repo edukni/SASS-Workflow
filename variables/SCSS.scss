@@ -27,3 +27,8 @@ div .#{ $stringSelector } {
       background: url($string) $stringThree $rgba ;
       box-shadow: $list;
 }
+
+div .#{$stringSelector}{
+  width: $width;
+
+}
