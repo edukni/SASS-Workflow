@@ -1,0 +1,36 @@
+$el: button;
+$list: elementOne, ElementTwo, ElementThree;
+////////// Inheritance Selectors //////////
+// #parent {
+//   background:green;
+//   #child-One{
+//     background:yellow;
+//     font-size: 1em;
+//   }
+//   #child-Two{
+//     font-weight: 200;
+//     #inner-child .content{
+//       bacgkround: blue;
+//     }
+//   }
+// &.HasClass ##{$el}{
+//     background: blue;
+//     font-weight: bold;
+//     font-style: italic;
+//   }
+// }
+
+//////////inheritance Properties//////////
+%shared {
+  background:green;
+  font-size: 2em;
+}
+
+.content{
+  @extend %shared;
+    line-height: 2em;
+}
+
+.sign, video, img, #{$list}{
+  @extend %shared;
+}
