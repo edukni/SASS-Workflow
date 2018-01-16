@@ -1,0 +1,52 @@
+$List1 : 200px;
+$List2 : 1px 2px 3px black,;
+$List3 : Helvetica, Arial, sans-serif;
+
+$NestedList :   1px 2px 3px green,   6px 7px 8px blue,   3px 2px 1px yellow;
+
+html{
+      //return the length of the list
+      background: length($List2);
+
+      //Obtain the specific value of the list.
+      background: nth($NestedList, 3);
+
+      //change specific value of the list.
+      background: set-nth($NestedList,2,1em 1em 8em black);
+
+      //return the list separator
+      background: list-separator($NestedList);
+
+      //join 2 lists. Also can be 2 strings. Third parameter as the type of separator (comma, space,)
+      background: join($List2, $NestedList, comma);
+
+      //More specifica than join. First parameter the list, second the value and third the type of separator.
+      background: append($List3, 'opensans', space);
+
+      //Return the position of the element of the second parameter. If is a list, need to type all the value of the list.
+      background: index($List3, Arial);
+
+      //Combines several lists into a multidimensional list.
+      backgroun: zip( 1px 2px 3px 4px, 4em 3em 2em 1em, black green blue red);
+
+
+}
+
+$BasicMap : (
+      'KeyName'    : 'Value',
+      'AnotherKey' : 200px
+);
+
+$Map1 : (
+      'KeyName'    :  'targeting a key produces it\'s value!',
+      'String'          :  string,
+      'Number'      :  102,
+      'List'             :  ( background .2s,  color .3s ),
+      'NestedMap' :  (
+            'NestedKey' :  'Nested value',
+            'url'              :  "../images/nestedImg.png",
+            'Width'         :  300px
+      )
+ );
+
+ $Map2 : (   'key1' : 'value1',   'key2' : 'value2',   'key3' : 'value3' );
