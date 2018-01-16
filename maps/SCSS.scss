@@ -1,0 +1,37 @@
+
+//Maps are manipulables beetwen sass functions.
+//No spaces beetween map keys.
+
+$map1 : (
+      'KeyName'    : 'Value',
+      'AnotherKey' : 200px
+);
+
+$map2 : (   'key1' : 'value1',   'key2' : 'value2',   'key3' : 'value3' );
+
+$map3 : (
+      'KeyName'    :  'targeting a key produces it\'s value!',
+      'String'          :  string,
+      'Number'      :  102,
+      'List'             :  ( background .2s,  color .3s ),
+      'NestedMap' :  (
+            'NestedKey' :  'Nested value',
+            'url'              :  "../images/nestedImg.png",
+            'Width'         :  300px
+      )
+ );
+
+.foo{
+      //keys avialable in the map, requires 1 argument.
+      content: map-keys( $map1 );
+      //List of values of the map.
+      content: map-values( $map1 );
+      //If a map has a key stored. First the map and then the value, return true or false.
+      content: map-has-key( $map1 , 'KeyName' );
+      //Get the value of the key.
+      content: map-get( $map3 , 'KeyName' );
+      //Map merge, merges 2 maps together. To stop the error, use inspect, returning the string error as sass.
+      content: inspect( map-merge( $map1 , $map2 ) );
+      //Remove a single key from multiple keys. Insert the key name as a value.
+      content: inspect( map-remove( $map2 , 'key1' , 'key2' ) );
+}
