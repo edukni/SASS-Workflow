@@ -19,3 +19,8 @@ html {
       @else { width: 0px; }
 
 }
+@if $eq == 11{
+  body{
+    width: 11px;
+  }
+}
