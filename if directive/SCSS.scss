@@ -1,0 +1,21 @@
+$type : element;
+$num : 10;
+$noValue : null;
+$eq: $num  + 1;
+
+
+html {
+
+      @if $type == helloWorld {background: "true";}
+      @else if $noValue != null { background:"doesnt match null"}
+      @else{ background:"false";}
+
+      @if $eq  == 12 { width: 11px;}
+      @else if $eq != 11 { width: 12px;}
+      @else if $eq > 11 { width: 13px;}
+      @else if $eq < 11 { width: 14px;}
+      @else if $eq <= 11 { width: 15px;}
+      @else if $eq >= 11 { width: 16px;}
+      @else { width: 0px; }
+
+}
