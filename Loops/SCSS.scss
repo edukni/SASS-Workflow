@@ -1,0 +1,7 @@
+$headers :  h1   ,   h2   ,   h3  ,   h4   ,   h5   ,   h6;
+$fontSize : 55px , 45px , 40px , 35px , 30px , 25px;
+
+$index : 1;
+@for $i from 1 through 6 {
+  h#{$i} {font-size: 55px;}
+}
